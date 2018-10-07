@@ -3,6 +3,8 @@ kind: Job
 metadata:
   name: oneshot
 spec:
+  parallelism: 5
+  completions: 10
   template:
     metadata:
       labels:
