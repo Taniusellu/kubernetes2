@@ -12,8 +12,9 @@ spec:
       - args:
         - --keygen-enable
         - --keygen-exit-on-complete
+        - --keygen-exit-code=1
         - --keygen-num-to-gen
-        - "100"
+        - "10"
         image: gcr.io/kuar-demo/kuard-amd64:1
         name: oneshot
       restartPolicy: OnFailure
