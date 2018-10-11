@@ -1,18 +1,17 @@
 apiVersion: extensions/v1beta1
-kind: ReplicaSet
+kind: DaemonSet
 metadata:
   labels:
-    name: kuard-rs
-  name: kuard-rs
+    name: kuard-ds
+  name: kuard-ds
 spec:
-  replicas: 3
   selector:
     matchLabels:
-      name: kuard-rs-pod
+      name: kuard-ds-pod
   template:
     metadata:
       labels:
-        name: kuard-rs-pod
+        name: kuard-ds-pod
     spec:
       containers:
       - image: gcr.io/kuar-demo/kuard-amd64:1
