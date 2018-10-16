@@ -17,7 +17,7 @@ spec:
       volumes:
       - name: database
         persistentVolumeClaim:
-          claimName: database-pvc
+          claimName: gc-pvc
       containers:
       - name: mysql
         image: mysql:5.6
@@ -28,6 +28,8 @@ spec:
         livenessProbe:
           tcpSocket:
             port: 3306
+          initialDelaySeconds: 10
+          timeoutSeconds: 3
         ports:
         - containerPort: 3306
         volumeMounts:
