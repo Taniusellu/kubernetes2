@@ -20,7 +20,7 @@ spec:
           claimName: mysql-pvc
       containers:
       - name: mysql
-        image: mysql:5.6
+        image: mysql:5.7
         env:
           # Use secret in real usage
         - name: MYSQL_ROOT_PASSWORD
